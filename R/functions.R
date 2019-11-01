@@ -14,6 +14,7 @@ get_parameters <- function() {
 
 draw_base <- function(grid_x, grid_y, ground = ".") {
     world <- data.frame(ncol = grid_x, nrow = grid_y)
+    colnames(world) <- seq(1, grid_x, 1) 
     for (i in seq(1, grid_y)){
         for (j in seq(1, grid_x)){
             world[j,i] <- as.character(ground)      
