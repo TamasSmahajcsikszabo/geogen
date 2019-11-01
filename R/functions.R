@@ -13,14 +13,16 @@ get_parameters <- function() {
 }
 
 draw_base <- function(grid_x, grid_y, ground = ".") {
-    world <- character()
+    world <- data.frame(ncol = grid_x, nrow = grid_y)
     for (i in seq(1, grid_y)){
-    worldline <- character()
         for (j in seq(1, grid_x)){
-            worldline <- paste0(worldline, ground)      
+            world[j,i] <- as.character(ground)      
     }
-        world <- paste0(world, "\n", worldline) 
+
     }
-cat(world)
 world
+}
+
+find_grid <- function(x,y, world){
+    world[x,y]
 }
